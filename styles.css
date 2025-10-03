@@ -235,7 +235,7 @@ nav::before {
 	}
 
 	.search-input:focus {
-		width: 250px;
+		width: 210px;
 		box-shadow: 0 0 0 4px rgba(44, 62, 44, 0.1);
 	}
 }
