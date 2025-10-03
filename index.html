@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Wanderlust</title>
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+	<body>
+		<!-- NAVBAR -->
+		<nav>
+			<div class="nav-container">
+				<div class="logo">Wanderlust.</div>
+
+				<ul class="nav-links">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About Us</a></li>
+					<li><a href="#contact">Contact Us</a></li>
+				</ul>
+
+				<div class="search-container">
+					<input
+						type="text"
+						class="search-input"
+						placeholder="Enter a destination or keyword"
+						id="searchInput"
+					/>
+					<button class="btn btn-search">Search</button>
+					<button class="btn btn-clear">Clear</button>
+				</div>
+
+				<div class="hamburger" onclick="toggleMenu()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</nav>
+		<!-- MOBILE NAVBAR -->
+		<div class="mobile-menu" id="mobileMenu">
+			<ul class="mobile-nav-links">
+				<li><a href="#home" onclick="toggleMenu()">Home</a></li>
+				<li><a href="#about" onclick="toggleMenu()">About Us</a></li>
+				<li><a href="#contact" onclick="toggleMenu()">Contact Us</a></li>
+			</ul>
+
+			<div class="mobile-search">
+				<input
+					type="text"
+					class="search-input"
+					placeholder="Enter a destination or keyword"
+					id="mobileSearchInput"
+				/>
+				<div class="mobile-search-buttons">
+					<button class="btn btn-search">Search</button>
+					<button class="btn btn-clear">Clear</button>
+				</div>
+			</div>
+		</div>
+		<script src="wanderlust.js"></script>
+	</body>
+</html>
