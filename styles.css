@@ -474,6 +474,10 @@ button[type="submit"]:hover {
 	transform: translateY(-2px);
 }
 
+.icon-success {
+	width: 6rem;
+	height: 6rem;
+}
 /* === RESPONSIVE === */
 @media (max-width: 1100px) {
 	.nav-links {
