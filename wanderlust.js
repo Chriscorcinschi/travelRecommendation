@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			showToast("Message sent successfully! ✓");
 		}
 
-		setTimeout(resetForm, 5000);
+		setTimeout(resetForm, 2000);
 	});
 
 	// Live validation while typing

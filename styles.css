@@ -365,6 +365,115 @@ nav::before {
 	transition: transform 0.3s ease;
 }
 
+/* === ABOUT US === */
+.about-section {
+	padding: 5rem 1.25rem;
+	color: white;
+}
+
+.about-title {
+	text-align: left;
+	margin-bottom: 40px;
+}
+
+.about-title h2 {
+	font-size: clamp(3rem, 12vw, 6rem);
+	margin-bottom: 10px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.about-presentation {
+	text-align: left;
+}
+
+.about-presentation p {
+	font-size: 1.125rem;
+	line-height: 1.6;
+}
+
+/* Team Grid Layout */
+.team-cards {
+	padding-top: 5rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	grid-column: 1 / -1;
+}
+.team-cards h3 {
+	grid-column: 1;
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+.card {
+	background: #c9d4ba9d;
+	backdrop-filter: blur(2px);
+	border-radius: 12px;
+	padding: 15px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+	transition: all 0.3s ease;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto auto auto;
+	gap: 10px;
+	align-items: start;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.card img {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid var(--color-primary);
+	grid-column: 1;
+	grid-row: 1 / span 3;
+	align-self: start;
+}
+
+.card h4 {
+	font-size: 1.1rem;
+	color: var(--color-primary-dark);
+	margin-bottom: 3px;
+	font-weight: 600;
+	grid-column: 2;
+	grid-row: 1;
+	text-align: left;
+	margin-top: 0;
+	padding-top: 1rem;
+}
+
+.card p {
+	color: white;
+	line-height: 1.4;
+	font-size: 0.85rem;
+	grid-column: 2;
+	grid-row: 2;
+	text-align: left;
+	margin: 0;
+}
+
+.role-tag {
+	display: inline-block;
+	padding: 6px 15px;
+	background: linear-gradient(135deg, #adb89f 0%, #c9d4ba 35%, #e4dac9 70%, #f0e8dd 100%);
+	color: var(--color-primary-dark);
+	border-radius: 1rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+	border: none;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	grid-column: 2;
+	grid-row: 3;
+	justify-self: start;
+	margin-top: 3px;
+}
+
 /* === CONTACT === */
 .container {
 	max-width: 1200px;
@@ -557,6 +666,12 @@ button[type="submit"]:hover {
 	.contact-right {
 		padding: 1.5rem;
 	}
+	.about-section {
+		padding: 0.1rem 1rem;
+	}
+	.team-cards {
+		padding-top: 2rem;
+	}
 }
 
 @media (max-width: 480px) {
@@ -591,5 +706,8 @@ button[type="submit"]:hover {
 
 	.hero-content p {
 		margin-bottom: 2rem;
+	}
+	.team-cards {
+		grid-template-columns: 1fr;
 	}
 }
