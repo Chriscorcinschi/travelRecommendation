@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Wanderlust</title>
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+	<body>
+		<!-- NAVBAR -->
+		<nav>
+			<div class="nav-container">
+				<div class="logo">Wanderlust.</div>
+
+				<ul class="nav-links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#about">About Us</a></li>
+					<li><a href="contact.html">Contact Us</a></li>
+				</ul>
+
+				<div class="search-container"></div>
+
+				<div class="hamburger" onclick="toggleMenu()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</nav>
+
+		<!-- MOBILE NAVBAR -->
+		<div class="mobile-menu" id="mobileMenu">
+			<ul class="mobile-nav-links">
+				<li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+				<li><a href="#about" onclick="toggleMenu()">About Us</a></li>
+				<li><a href="contact.html" onclick="toggleMenu()">Contact Us</a></li>
+			</ul>
+
+			<div class="mobile-search">
+				<input
+					type="text"
+					class="search-input"
+					placeholder="Enter a destination or keyword"
+					id="mobileSearchInput"
+				/>
+				<div class="mobile-search-buttons">
+					<button class="btn btn-search" onclick="performMobileSearch()">Search</button>
+					<button class="btn btn-clear" onclick="clearMobileSearch()">Clear</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="hero-image" style="background-image: url(./assets/img/hero_image.png)"></div>
+
+		<!-- CONTACT SECTION -->
+		<section class="contact-section" aria-labelledby="contact-title">
+			<div class="container">
+				<div class="section-title">
+					<h2 id="contact-title">Contact Us</h2>
+				</div>
+
+				<div class="contact-wrapper">
+					<div class="contact-left">
+						<h3>Ready to Explore?</h3>
+						<p>
+							The world is full of wonders. Take the first step and let us help you plan your
+							perfect journey.
+						</p>
+					</div>
+
+					<div class="contact-right">
+						<form id="contactForm">
+							<div class="form-group">
+								<label for="contactName">Name</label>
+								<input
+									type="text"
+									id="contactName"
+									name="name"
+									placeholder="e.g. Tony Stark"
+									required
+								/>
+							</div>
+
+							<div class="form-group">
+								<label for="contactEmail">Email</label>
+								<input
+									type="email"
+									id="contactEmail"
+									name="email"
+									placeholder="e.g. tony@example.com"
+									required
+									aria-describedby="emailError"
+								/>
+								<span id="emailError" class="error-message" role="alert" hidden>
+									Please enter a valid email
+								</span>
+							</div>
+
+							<div class="form-group">
+								<label for="contactMessage">Message</label>
+								<textarea
+									id="contactMessage"
+									name="message"
+									rows="5"
+									placeholder="Tell us about your inquiry..."
+									required
+								></textarea>
+							</div>
+
+							<button type="submit">Send Message</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Social Icons -->
+		<div class="social-icons">
+			<a href="#" class="social-icon">
+				<img src="./assets/img/youtube.png" alt="youtube" />
+			</a>
+			<a href="#" class="social-icon">
+				<img src="./assets/img/insta.png" alt="instagram" />
+			</a>
+			<a href="#" class="social-icon">
+				<img src="./assets/img/x.png" alt="x" />
+			</a>
+			<a href="#" class="social-icon">
+				<img src="./assets/img/fb.png" alt="facebook" />
+			</a>
+		</div>
+
+		<script src="wanderlust.js"></script>
+	</body>
+</html>
