@@ -154,9 +154,8 @@ nav::before {
 .suggestions-container {
 	position: absolute;
 	top: calc(100% + 20px); /* Posizionato sotto la navbar */
-	left: 30rem;
+	left: 40rem;
 	right: 0;
-	margin: 0 auto;
 	max-width: 600px;
 	background: white;
 	border-radius: 12px;
@@ -166,23 +165,22 @@ nav::before {
 	display: none;
 	border: 2px solid var(--color-primary);
 }
-/*  SUGGESTION ITEM */
+
+/* SUGGESTION ITEM - MODIFICATO CON GRID LAYOUT IN COLONNA */
 .suggestion-item {
-	display: flex;
-	gap: 15px;
-	padding: 15px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto auto;
+	gap: 10px;
+	padding: 1rem;
 	cursor: pointer;
 	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	border-bottom: 1px solid #e4dac9;
 	position: relative;
-}
-
-.suggestion-item:last-child {
-	border-bottom: none;
+	align-items: start;
 }
 
 .suggestion-item::before {
-	content: "";
 	position: absolute;
 	inset: 0;
 	background: linear-gradient(135deg, rgba(173, 184, 159, 0.1), rgba(228, 218, 201, 0.1));
@@ -196,28 +194,27 @@ nav::before {
 
 .suggestion-item:hover {
 	background-color: rgba(173, 184, 159, 0.05);
-	transform: translateX(5px);
 }
-/*  SUGGESTION IMAGE */
+
+/* SUGGESTION IMAGE - PIÙ GRANDE E IN ALTO */
 .suggestion-image {
-	width: 90px;
-	height: 90px;
+	width: 27rem;
+	height: 15rem;
 	object-fit: cover;
 	border-radius: 10px;
-	flex-shrink: 0;
 	border: 2px solid var(--color-primary);
 	transition: transform 0.3s ease;
+	justify-self: center; /* Centra l'immagine */
 }
 
 .suggestion-item:hover .suggestion-image {
 	transform: scale(1.05);
 }
-/*  SUGGESTION CONTENT */
+
+/* SUGGESTION CONTENT - SOTTO L'IMMAGINE */
 .suggestion-content {
-	flex: 1;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	gap: 6px;
 }
 
@@ -227,6 +224,7 @@ nav::before {
 	font-weight: 600;
 	color: var(--color-primary-dark);
 	transition: color 0.3s ease;
+	text-align: center; /* Centra il titolo */
 }
 
 .suggestion-item:hover .suggestion-title {
@@ -239,8 +237,8 @@ nav::before {
 	color: #666;
 	line-height: 1.5;
 	overflow: hidden;
+	text-align: center; /* Centra la descrizione */
 }
-
 /*ANIMAZIONE APERTURA*/
 @keyframes slideDown {
 	from {
@@ -286,6 +284,10 @@ nav::before {
 /* === MENU MOBILE === */
 .mobile-menu {
 	display: none;
+	position: absolute;
+	width: 100%;
+	z-index: 1000;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 	background: linear-gradient(135deg, #adb89f 0%, #e4dac9 100%);
 	padding: 1rem 2rem;
 	flex-direction: column;
@@ -294,6 +296,7 @@ nav::before {
 
 .mobile-menu.active {
 	display: flex;
+	overflow-y: auto;
 }
 
 .mobile-nav-links {
@@ -326,6 +329,7 @@ nav::before {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
+	position: relative;
 }
 
 .mobile-search .search-input {
@@ -377,6 +381,7 @@ nav::before {
 	font-size: clamp(3rem, 11vw, 6rem);
 	margin-bottom: 5rem;
 	line-height: 1.1;
+	text-transform: uppercase;
 }
 
 .hero-content p {
@@ -727,6 +732,9 @@ button[type="submit"]:hover {
 
 	.hero-content {
 		padding: 0 80px;
+	}
+	.suggestions-container {
+		left: 25rem;
 	}
 }
 

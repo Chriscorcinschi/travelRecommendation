@@ -95,6 +95,10 @@ if (contactForm && contactSuccess) {
 // ================================
 // SEARCH FUNCTIONALITY
 // ================================
+
+// ================================
+// SEARCH FUNCTIONALITY
+// ================================
 let destinationsData = null;
 const loadDestinations = async () => {
 	try {
@@ -173,7 +177,6 @@ const displaySuggestions = (suggestions) => {
 };
 
 // CLICK OUTSIDE TO HIDE
-
 const setupClickOutside = () => {
 	document.addEventListener("click", (e) => {
 		const searchContainer = document.querySelector(".search-container");
@@ -188,12 +191,12 @@ const setupClickOutside = () => {
 const performSearch = (inputElement) => {
 	if (inputElement && inputElement.value.trim()) {
 		console.log("Performing search for:", inputElement.value);
-
 		const filtered = filterDestinations(inputElement.value, destinationsData);
 		displaySuggestions(filtered.slice(0, 5));
 	}
 };
 
+// CLEAR FUNCTIONS
 const clearSearch = (inputElement) => {
 	if (inputElement) {
 		inputElement.value = "";
