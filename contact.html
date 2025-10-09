@@ -18,9 +18,18 @@
 					<li><a href="contact.html">Contact Us</a></li>
 				</ul>
 
-				<div class="search-container"></div>
+				<div class="search-container">
+					<input
+						type="text"
+						class="search-input"
+						placeholder="Enter a destination or keyword"
+						id="searchInput"
+					/>
+					<button class="btn btn-search" id="desktopSearchBtn">Search</button>
+					<button class="btn btn-clear" id="desktopClearBtn">Clear</button>
+				</div>
 
-				<div class="hamburger" onclick="toggleMenu()">
+				<div class="hamburger">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -31,9 +40,9 @@
 		<!-- MOBILE NAVBAR -->
 		<div class="mobile-menu" id="mobileMenu">
 			<ul class="mobile-nav-links">
-				<li><a href="index.html" onclick="toggleMenu()">Home</a></li>
-				<li><a href="about.html" onclick="toggleMenu()">About Us</a></li>
-				<li><a href="contact.html" onclick="toggleMenu()">Contact Us</a></li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
 			</ul>
 
 			<div class="mobile-search">
