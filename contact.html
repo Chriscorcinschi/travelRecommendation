@@ -44,19 +44,17 @@
 					id="mobileSearchInput"
 				/>
 				<div class="mobile-search-buttons">
-					<button class="btn btn-search" onclick="performMobileSearch()">Search</button>
-					<button class="btn btn-clear" onclick="clearMobileSearch()">Clear</button>
+					<button class="btn btn-search" id="mobileSearchBtn">Search</button>
+					<button class="btn btn-clear" id="mobileClearBtn">Clear</button>
 				</div>
 			</div>
 		</div>
 
-		<div class="hero-image" style="background-image: url(./assets/img/hero_image.png)"></div>
-
 		<!-- CONTACT SECTION -->
-		<section class="contact-section" aria-labelledby="contact-title">
+		<section class="global-container contact-section">
 			<div class="container">
-				<div class="section-title">
-					<h2 id="contact-title">Contact Us</h2>
+				<div class="contact-title">
+					<h2>Contact Us</h2>
 				</div>
 
 				<div class="contact-wrapper">
@@ -89,11 +87,7 @@
 									name="email"
 									placeholder="e.g. tony@example.com"
 									required
-									aria-describedby="emailError"
 								/>
-								<span id="emailError" class="error-message" role="alert" hidden>
-									Please enter a valid email
-								</span>
 							</div>
 
 							<div class="form-group">
@@ -130,23 +124,26 @@
 					</div>
 				</div>
 			</div>
+			<!-- SOCIAL ICONS -->
+			<div class="social-icons">
+				<a href="#" class="social-icon">
+					<img src="./assets/img/youtube.png" alt="youtube" />
+				</a>
+				<a href="#" class="social-icon">
+					<img src="./assets/img/insta.png" alt="instagram" />
+				</a>
+				<a href="#" class="social-icon">
+					<img src="./assets/img/x.png" alt="x" />
+				</a>
+				<a href="#" class="social-icon">
+					<img src="./assets/img/fb.png" alt="facebook" />
+				</a>
+			</div>
 		</section>
 
-		<!-- Social Icons -->
-		<div class="social-icons">
-			<a href="#" class="social-icon">
-				<img src="./assets/img/youtube.png" alt="youtube" />
-			</a>
-			<a href="#" class="social-icon">
-				<img src="./assets/img/insta.png" alt="instagram" />
-			</a>
-			<a href="#" class="social-icon">
-				<img src="./assets/img/x.png" alt="x" />
-			</a>
-			<a href="#" class="social-icon">
-				<img src="./assets/img/fb.png" alt="facebook" />
-			</a>
-		</div>
+		<footer class="footer">
+			<p>&copy; 2025 Wanderlust. All rights reserved by Corcinschi Chris.</p>
+		</footer>
 		<script src="wanderlust.js"></script>
 	</body>
 </html>
