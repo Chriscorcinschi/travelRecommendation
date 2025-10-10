@@ -340,7 +340,7 @@ nav {
 	transform: translateY(-4px) scale(1.01);
 }
 
-/* SUGGESTION IMAGE */
+/* SUGGESTION IMAGE  */
 .suggestion-image {
 	width: 100%;
 	aspect-ratio: 16/9;
@@ -402,7 +402,7 @@ nav {
 	text-align: center;
 	color: #777;
 	font-size: 1rem;
-	transform: none !important; /* evita animazioni */
+	transform: none !important;
 	opacity: 1 !important;
 	animation: none !important;
 }
@@ -421,7 +421,7 @@ nav {
 	animation: containerFadeIn 0.3s ease-out;
 }
 
-/* SCROLLBAR */
+/* SCROLLBAR SUGGESTION */
 .suggestions-container {
 	scrollbar-width: thin;
 	scrollbar-color: var(--color-primary) transparent;

@@ -249,7 +249,7 @@ const displaySuggestions = (suggestions, showNoResults = false) => {
 	container.querySelectorAll(".suggestion-item").forEach((item) => {
 		item.addEventListener("click", () => {
 			const destData = JSON.parse(item.dataset.destination);
-			window.selectedDestination = destData;
+			sessionStorage.setItem("selectedDestination", JSON.stringify(destData));
 			document.body.style.overflow = "auto";
 			window.location.href = "destination.html";
 		});

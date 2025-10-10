@@ -1,10 +1,11 @@
-/* Loading spinner  */
+/* ===  Loading spinner  ===*/
+
 .loading-spinner {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-height: 5cap;
+	min-height: 50vh;
 	gap: 1.5rem;
 }
 
@@ -30,6 +31,14 @@
 	color: var(--color-primary);
 	font-size: 1.2rem;
 	font-weight: 500;
+}
+
+/* === MAIN PAGE LAYOUT === */
+
+.destination-page {
+	min-height: calc(100vh - 80px);
+	display: flex;
+	flex-direction: column;
 }
 
 /* === DESTINATION SECTION === */
@@ -84,6 +93,7 @@
 
 .destination-info {
 	padding: 2rem;
+	flex: 1;
 }
 
 .info-container {
@@ -117,7 +127,7 @@
 	margin: 0;
 }
 
-/* === CALL TO ACTION === */
+/* === CALL TO ACTION SECTION === */
 
 .cta-section-destination {
 	display: flex;
@@ -168,24 +178,13 @@
 .destination-content {
 	opacity: 0;
 	animation: fadeIn 0.6s ease-out forwards;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
 }
 
 .destination-content.fade-in {
 	animation: fadeIn 0.6s ease-out forwards;
-}
-/* === GRID LAYOUT DESTINATION INFO === */
-.grid-layout {
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	gap: 2rem;
-	align-items: start;
-}
-
-.grid-image img {
-	width: 100%;
-	border-radius: 20px;
-	object-fit: cover;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes fadeIn {
@@ -197,11 +196,9 @@
 	}
 }
 
-/* ========================================
-   RESPONSIVE
-   ======================================== */
+/* === RESPONSIVE === */
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
 	.destination-image-container {
 		height: 400px;
 	}
@@ -228,9 +225,6 @@
 		width: 100%;
 		max-width: 300px;
 	}
-	.grid-layout {
-		grid-template-columns: 1fr;
-	}
 }
 
 @media (max-width: 480px) {
@@ -240,5 +234,13 @@
 
 	.destination-title {
 		font-size: 1.5rem;
+	}
+
+	.destination-info {
+		padding: 1.5rem;
+	}
+
+	.info-card {
+		padding: 1.5rem;
 	}
 }
