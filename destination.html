@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Destination - Wanderlust</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="destination.css" />
+	</head>
+	<body>
+		<!-- LAYOUT NAVBAR -->
+		<nav>
+			<div class="nav-container">
+				<div class="logo">Wanderlust.</div>
+			</div>
+		</nav>
+
+		<!-- DESTINATION -->
+		<main class="destination-page">
+			<!-- Loading spinner -->
+			<div id="loadingSpinner" class="loading-spinner">
+				<div class="spinner"></div>
+				<p>Loading...</p>
+			</div>
+
+			<div id="destinationContent" class="destination-content">
+				<!-- Hero Destination Section -->
+				<section class="destination-section">
+					<div class="destination-image-container">
+						<img id="destinationImage" src="" alt="" class="destination-image" />
+						<div class="destination-overlay">
+							<h1 id="destinationTitle" class="destination-title"></h1>
+						</div>
+					</div>
+				</section>
+
+				<!-- Destination Information-->
+				<section class="destination-info">
+					<div class="info-container">
+						<div class="info-card">
+							<h2>Description</h2>
+							<p id="destinationDescription" class="description-text"></p>
+						</div>
+
+						<!-- Call to Action btn-->
+						<div class="cta-section-destination">
+							<button class="btn-cta" onclick="window.location.href='contact.html'">
+								Plan your trip
+							</button>
+							<button class="btn-secondary" onclick="window.location.href='index.html'">
+								Explore other destinations
+							</button>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<p>&copy; 2025 Wanderlust. All rights reserved by Corcinschi Chris.</p>
+		</footer>
+
+		<script src="destination.js"></script>
+	</body>
+</html>

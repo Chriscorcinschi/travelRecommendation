@@ -1,0 +1,244 @@
+/* Loading spinner  */
+.loading-spinner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 5cap;
+	gap: 1.5rem;
+}
+
+.spinner {
+	width: 60px;
+	height: 60px;
+	border: 5px solid rgba(173, 184, 159, 0.3);
+	border-top: 5px solid var(--color-primary);
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.loading-spinner p {
+	color: var(--color-primary);
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+/* === DESTINATION SECTION === */
+
+.destination-section {
+	width: 100%;
+}
+
+.destination-image-container {
+	position: relative;
+	width: 100%;
+	height: 600px;
+	overflow: hidden;
+}
+
+.destination-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.destination-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+	padding: 3rem 2rem;
+}
+
+.destination-title {
+	color: white;
+	font-size: 3rem;
+	margin: 0;
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+	animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* === DESTINATION INFO === */
+
+.destination-info {
+	padding: 2rem;
+}
+
+.info-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.info-card {
+	background: white;
+	padding: 2.5rem;
+	border-radius: 20px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card h2 {
+	color: var(--color-primary);
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+	border-bottom: 3px solid var(--color-primary);
+	padding-bottom: 0.5rem;
+}
+
+.description-text {
+	color: #444;
+	font-size: 1.15rem;
+	line-height: 1.8;
+	margin: 0;
+}
+
+/* === CALL TO ACTION === */
+
+.cta-section-destination {
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+	padding: 2rem 0;
+	flex-wrap: wrap;
+}
+
+.btn-cta {
+	padding: 1rem 2.5rem;
+	font-size: 1.1rem;
+	font-weight: 600;
+	background: var(--color-primary);
+	color: white;
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: 0 4px 15px rgba(44, 62, 44, 0.3);
+}
+
+.btn-cta:hover {
+	background: var(--color-primary-dark);
+	transform: scale(1.05);
+	box-shadow: 0 6px 25px rgba(44, 62, 44, 0.4);
+}
+
+.btn-secondary {
+	padding: 1rem 2.5rem;
+	font-size: 1.1rem;
+	font-weight: 600;
+	background: transparent;
+	color: var(--color-primary);
+	border: 2px solid var(--color-primary);
+	border-radius: 30px;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.btn-secondary:hover {
+	background: var(--color-primary);
+	color: white;
+}
+
+/* === FADE IN ANIMATION === */
+
+.destination-content {
+	opacity: 0;
+	animation: fadeIn 0.6s ease-out forwards;
+}
+
+.destination-content.fade-in {
+	animation: fadeIn 0.6s ease-out forwards;
+}
+/* === GRID LAYOUT DESTINATION INFO === */
+.grid-layout {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 2rem;
+	align-items: start;
+}
+
+.grid-image img {
+	width: 100%;
+	border-radius: 20px;
+	object-fit: cover;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+	.destination-image-container {
+		height: 400px;
+	}
+
+	.destination-title {
+		font-size: 2rem;
+	}
+
+	.destination-overlay {
+		padding: 2rem 1.5rem;
+	}
+
+	.description-text {
+		font-size: 1rem;
+	}
+
+	.cta-section-destination {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.btn-cta,
+	.btn-secondary {
+		width: 100%;
+		max-width: 300px;
+	}
+	.grid-layout {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 480px) {
+	.destination-image-container {
+		height: 300px;
+	}
+
+	.destination-title {
+		font-size: 1.5rem;
+	}
+}
