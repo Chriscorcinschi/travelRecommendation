@@ -1073,13 +1073,13 @@ button[type="submit"]:hover {
 
 	/* === SOCIAL RESPONSIVE ICONS 480px === */
 	.social-icon {
-		width: 15px;
-		height: 15px;
+		width: 25px;
+		height: 25px;
 	}
 
 	.social-icon img {
-		width: 10px;
-		height: 10px;
+		width: 20px;
+		height: 20px;
 	}
 
 	/* === ABOUT RESPONSIVE SECTION 480px === */
