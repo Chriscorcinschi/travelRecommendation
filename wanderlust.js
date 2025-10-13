@@ -149,19 +149,76 @@ const loadDestinations = async () => {
 };
 
 const flattenDestinations = (data) => {
-	return [].concat(
-		data.countries.flatMap((c) => c.cities),
-		data.temples,
-		data.beaches
-	);
+	const destinations = [];
+
+	data.countries.forEach((country) => {
+		country.cities.forEach((city) => {
+			destinations.push({
+				name: city.name,
+				imageUrl: city.imageUrl,
+				description: city.description,
+				id: country.id,
+				category: "country",
+				countryName: country.name,
+			});
+		});
+	});
+
+	data.temples.forEach((temple) => {
+		destinations.push({
+			id: temple.id,
+			name: temple.name,
+			imageUrl: temple.imageUrl,
+			description: temple.description,
+			category: "temple",
+		});
+	});
+
+	data.beaches.forEach((beach) => {
+		destinations.push({
+			id: beach.id,
+			name: beach.name,
+			imageUrl: beach.imageUrl,
+			description: beach.description,
+			category: "beach",
+		});
+	});
+
+	return destinations;
 };
 
 const filterDestinations = (term, destinations) => {
 	const t = term.toLowerCase().trim();
 	if (t.length < 2) return [];
-	return destinations.filter(
-		(d) => d.name.toLowerCase().includes(t) || d.description.toLowerCase().includes(t)
-	);
+
+	const results = destinations.filter((d) => {
+		const nameMatch = d.name.toLowerCase().includes(t);
+		const descriptionMatch = d.description.toLowerCase().includes(t);
+		const categoryMatch = d.category?.toLowerCase().includes(t);
+		const countryMatch = d.countryName?.toLowerCase().includes(t);
+
+		return nameMatch || descriptionMatch || categoryMatch || countryMatch;
+	});
+
+	return results.sort((a, b) => {
+		const aName = a.name.toLowerCase();
+		const bName = b.name.toLowerCase();
+
+		if (aName === t && bName !== t) return -1;
+		if (bName === t && aName !== t) return 1;
+
+		const aStarts = aName.startsWith(t);
+		const bStarts = bName.startsWith(t);
+		if (aStarts && !bStarts) return -1;
+		if (bStarts && !aStarts) return 1;
+
+		const aNameMatch = aName.includes(t);
+		const bNameMatch = bName.includes(t);
+		if (aNameMatch && !bNameMatch) return -1;
+		if (bNameMatch && !aNameMatch) return 1;
+
+		return aName.localeCompare(bName);
+	});
 };
 
 // ----------------- CONTAINER MANAGEMENT -----------------
@@ -228,22 +285,27 @@ const displaySuggestions = (suggestions, showNoResults = false) => {
 		`;
 		return;
 	}
+	const categoryLabels = {
+		country: "Country",
+		temple: "Temple",
+		beach: "Beach",
+	};
 
 	container.innerHTML = suggestions
-		.map(
-			(dest) => `
+		.map((dest) => {
+			const categoryLabel = categoryLabels[dest.category] || "";
+			return `
 			<div class="suggestion-item" data-destination='${JSON.stringify(dest)}'>
 				<img src="${dest.imageUrl}" alt="${dest.name}" class="suggestion-image">
 				<div class="suggestion-content">
 					<h4>${dest.name}</h4>
 					<p>${dest.description}</p>
 				</div>
-			</div>`
-		)
+			</div>`;
+		})
 		.join("");
 
 	container.style.display = "block";
-
 	document.body.style.overflow = "hidden";
 
 	container.querySelectorAll(".suggestion-item").forEach((item) => {
